@@ -1,0 +1,106 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 50px 15px;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  background: linear-gradient(160deg, #e8ecff 0%, #fdeaf1 100%);
+}
+
+.app {
+  width: 480px;
+  max-width: 100%;
+  background: #ffffff;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(80, 70, 160, 0.22);
+}
+
+/* ---------- Header ---------- */
+.top {
+  padding: 28px 28px 24px;
+  color: white;
+  background: linear-gradient(135deg, #5b3df5, #ff4d8d);
+}
+.top h1 { font-size: 30px; }
+.top p  { margin-top: 4px; opacity: 0.9; font-size: 14px; }
+
+/* ---------- Input ---------- */
+.input-area { display: flex; gap: 10px; padding: 22px 28px 12px; }
+
+#taskInput {
+  flex: 1;
+  padding: 13px 16px;
+  font-size: 16px;
+  border: 2px solid #e3e6f3;
+  border-radius: 12px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+#taskInput:focus { border-color: #5b3df5; }
+
+#addBtn {
+  padding: 0 22px;
+  font-size: 16px;
+  font-weight: 600;
+  color: white;
+  background: #5b3df5;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+#addBtn:hover { background: #4527d8; transform: translateY(-2px); box-shadow: 0 8px 16px rgba(91, 61, 245, 0.4); }
+
+/* ---------- Task list ---------- */
+ul { list-style: none; padding: 8px 28px 10px; }
+
+li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px;
+  margin-bottom: 10px;
+  background: #f6f7fd;
+  border-radius: 14px;
+  transition: background 0.2s;
+}
+li:hover { background: #eef0fc; }
+
+.check-btn {
+  width: 28px;
+  height: 28px;
+  flex-shrink: 0;
+  font-size: 15px;
+  color: transparent;
+  background: white;
+  border: 2px solid #b9bfe0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.check-btn:hover { border-color: #22c55e; background: #eafaf0; }
+
+.task-text { flex: 1; color: #2b2f4a; font-size: 16px; word-break: break-word; }
+
+/* Completed task look */
+li.completed .check-btn { background: #22c55e; border-color: #22c55e; color: white; }
+li.completed .task-text { text-decoration: line-through; color: #9aa0bd; }
+
+.delete-btn {
+  width: 32px;
+  height: 32px;
+  font-size: 15px;
+  color: #ef4444;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.delete-btn:hover { background: #fee2e2; transform: scale(1.1); }
+
+#emptyMsg { text-align: center; color: #9aa0bd; padding: 10px 28px 30px; }
